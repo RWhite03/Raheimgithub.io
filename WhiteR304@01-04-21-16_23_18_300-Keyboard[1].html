@@ -1,0 +1,414 @@
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <script>
+        var fbq = function (a, d) {
+
+        };</script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-P92RCN');
+    </script>
+
+    <!-- End Google Tag Manager -->
+    <title>TTRS - Login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-itunes-app" content="app-id=1471400001" />
+
+    <script src="/bundles/external-js?v=Tjkb_Pef2ORxoxesnqIQXjzHxWrV0cLC053iaA5syUY1"></script>
+
+    <script src="/bundles/layout-auth-js?v=RmrKallHkBUgJzjK8LmQwzLEQijhZv0_cMSl3TdgCO01"></script>
+
+
+    <link href="/bundles/external-css?v=pVy1q5sIaizbYAB3D1NvPRW5EPTdzmfYbq8-mYSYLqo1" rel="stylesheet"/>
+
+    <link href="/bundles/layout-auth-css?v=cULfUYhjdRKoKxvwsM8D6q3TZHPxMp5gZuIOI88qlmE1" rel="stylesheet"/>
+
+    <link href="/Scripts/Jquery/jquery-ui-1.8.18/css/custom-theme/jquery-ui-1.8.19.custom.css" rel="stylesheet" type="text/css" />
+
+    <script>
+        Environment.Isdevelopment = false;
+    </script>
+
+    <link rel='icon' href='/favicon.ico' />
+
+    <script>
+        Segment.Initialization(false, "", "", false);
+    </script>
+    <!--load disign stylesheet-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    
+
+    
+
+    <script type="text/javascript">
+        !function (a, b, c, d, e, f, g, h) {
+            a.RaygunObject = e, a[e] = a[e] || function () {
+                (a[e].o = a[e].o || []).push(arguments)
+            }, f = b.createElement(c), g = b.getElementsByTagName(c)[0],
+                f.async = 1, f.src = d, g.parentNode.insertBefore(f, g), h = a.onerror, a.onerror = function (b, c, d, f, g) {
+                    h && h(b, c, d, f, g), g || (g = new Error(b)), a[e].q = a[e].q || [], a[e].q.push({
+                        e: g
+                    })
+                }
+        }(window, document, "script", "//cdn.raygun.io/raygun4js/raygun.min.js", "rg4js");
+    </script>
+
+</head>
+<body id="pageLogin">
+    <div class="mobile-app-link-wrapper">
+    <div class="mobile-app-close">X</div>
+    <div class="mobile-app-image"><div></div></div>
+    <div class="mobile-app-name">
+        <div class="app-title">TTRS Reporting</div>
+        <div class="app-description">Touch-type Read and Spell (TTRS)</div>
+    </div>
+    <div class="mobile-app-button">
+        <button class="btn gg-btn gg-btn-green">OPEN</button>
+    </div>
+</div>
+
+<style>
+    .mobile-app-link-wrapper {
+        background-color: #fff;
+        border-bottom: 1px solid #7c7c7c;
+        color: black;
+        height: 70px;
+        font-family: "Conv_ProximaNova-Regular";
+        display: none;
+        width: 100%;
+    }
+
+    .mobile-app-link-wrapper * {
+        box-sizing: border-box;
+    }
+
+    .mobile-app-link-wrapper > div {
+        display: inline-block;
+    }
+    .mobile-app-name {
+        margin-left: 4px;
+        vertical-align: middle;
+    }
+        .mobile-app-name .app-title {
+            font-weight: bold;
+            font-size: 13px;
+        }
+    .mobile-app-name .app-description {
+        font-size: 11px;
+        color: #848388;
+    }
+
+        .mobile-app-image > div {
+            width: 50px;
+            height: 50px;
+            background: url(/Content/images/svg/Logo/logo-symbol-color.svg) 0 0 no-repeat;
+            background-size: contain;
+            background-position: center;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    .mobile-app-button {
+        float: right;
+        padding-top: 20px;
+        margin-right: 10px;
+    }
+    .mobile-app-button .gg-btn {
+        padding: 0 11px !important;
+    }
+        .mobile-app-button .btn {
+            font-weight: 600;
+            height: 30px;
+        }
+
+        .mobile-app-button div:first-child {
+            color: black;
+        }
+
+    .mobile-app-close {
+        width: 34px;
+        height: 70px;
+        line-height: 70px;
+        text-align: center;
+    }
+    @media (max-width: 334px) {
+        .app-description {
+            max-width: 140px;
+        }
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        const pcClient = "pc";
+        const androidClient = "android";
+        var client = pcClient
+
+        if (navigator.userAgent.toLowerCase().indexOf(androidClient) > -1) {
+            client = androidClient;
+        }
+
+        var isTTRSAReportingAppViewed = localStorage.getItem('IsTTRSAReportingAppViewed');
+
+        if (client != pcClient && isTTRSAReportingAppViewed !== "true") {
+            if ($(".header-nav")[0] !== undefined) {
+                $(".header-nav").css("top", "70px");
+                $("body").css("padding-top", "70px");
+
+                $(".mobile-app-link-wrapper").css("position", "fixed");
+                $(".mobile-app-link-wrapper").css("z-index", "1");
+                $(".mobile-app-link-wrapper").css("top", "0");
+                $("#mainMenu").css("top", "130px");
+                $(".chat-container .selected-user-info .show-chat-users-list.expired").css("top", "70px");
+            }
+
+            $("body").prepend($(".mobile-app-link-wrapper"));
+            $(".mobile-app-link-wrapper").show();
+
+            $(".mobile-app-button").click(function () {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.rivesolution.ttrs";
+            });
+
+            $(".mobile-app-close").click(function () {
+                if ($(".header-nav")[0] !== undefined) {
+                    $("body").css("padding-top", "0px");
+                    $(".header-nav").css("top", "0px");
+                    $("#mainMenu").css("top", "130px");
+                    $(".chat-container .selected-user-info .show-chat-users-list.expired").css("top", "0");
+                }
+
+                localStorage.setItem('IsTTRSAReportingAppViewed', true);
+
+                $(".mobile-app-link-wrapper").hide();
+            });
+        }
+    });
+</script> 
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P92RCN"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="content-area" class="login">
+        <div class="content-left">
+
+                <div class="top"><div class="ttrs-sign"></div></div>
+                <div class="middle">
+                    <h1>Touch-type Read and Spell (TTRS)</h1>
+                    <h4>readandspell.com</h4>
+                    <p class="margin-bottom-30">A highly accessible, multi-sensory course that teaches<br /> touch-typing, reading and spelling at the same time.</p>
+                    <ul class="check-style">
+                        <li class="margin-bottom-15">Highly adaptive</li>
+                        <li class="margin-bottom-15">Modular design</li>
+                        <li class="margin-bottom-15">Phonics-based</li>
+                        <li class="margin-bottom-15">Orton-Gillingham</li>
+                        <li class="margin-bottom-15">Multi-sensory</li>
+                        <li class="margin-bottom-15">UK & US versions</li>
+                    </ul>
+                    <a href="http://www.readandspell.com" target="_blank" class="gg-btn gg-btn-medium gg-btn-green-invert  margin-top-30">Visit TTRS website<i class="ico ico-arrow-right"></i></a>
+                </div>
+            <div class="bottom margin-bottom-10 login-footer">
+                <img src="/Content/images/svg/login/Assured-01_SVG_Blue.svg" class="british-dyslexia-label" />
+                <div class="login-footer-text">
+                    <div>1992–2020 © Touch-type Read & Spell (TTRS)</div>
+                    <ul>
+                        <li><a href="http://www.readandspell.com/terms" target="_blank">Terms of Use</a>&ensp;</li>
+                        <li><a href="http://www.readandspell.com/privacy" target="_blank">Privacy Policy</a> &ensp;</li>
+                        <li><a href="http://www.readandspell.com/privacy#cookies" target="_blank">Cookies</a> &ensp;</li>
+                        <li><a href="http://www.readandspell.com/refundpolicy" target="_blank">Refund Policy</a> &ensp;</li>
+                        <li><a href="http://www.readandspell.com/blog" target="_blank">Blog</a>&ensp;</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content-middle"></div>
+        <div class="content-right">
+            <div class="width-280px">
+                <div class="top">
+                    
+
+
+
+<div class="login-form">
+    <h1>TTRS Login</h1>
+<form action="/Account/LogOn?ReturnUrl=%2FKeyboard%3Fs%3D1%26l%3D2%26m%3D29" method="post"><fieldset>
+    <div class="slim-control">
+        <input class="form-input" data-val="true" data-val-required="Field is required" id="UserName" name="UserName" onblur="javascript:{this.value = this.value? $.trim(this.value):null; }" placeholder="Username or E-mail" type="text" value="" />
+        <div class="error-area">
+        </div>
+    </div>
+    <div class="slim-control for-password">
+        <input class="form-input" data-val="true" data-val-required="Field is required" id="Password" name="Password" placeholder="Password" type="password" />
+        <label class="show-password" for="ShowPassword"></label>
+        <div class="error-area">
+            <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+    <div class="check" id="ShowPasswordCheck">
+        <input type="checkbox" id="ShowPassword" name="ShowPassword" class="t1Check" value="false" />
+        <label for="ShowPassword">Show Password</label>
+    </div>
+    <div class="row">
+        <div class="inline-block check">
+            <input class="t1Check" id="RememberMe" name="RememberMe" type="checkbox" value="true">
+            <label for="RememberMe">Remember me</label>
+        </div>
+        <button type="submit" class="display-block  gg-btn gg-btn-green gg-btn-medium pull-left">
+            <span>
+                <span>
+                    Log in
+                </span>
+            </span>
+        </button>
+    </div>
+
+
+    
+    <div id="private-policy">
+        By logging in, you agree to our <a href="https://www.readandspell.com/terms" target="_blank">Terms of Service</a> and <a href="https://www.readandspell.com/privacy" target="_blank">Privacy Policy</a>.
+    </div>
+
+   
+    <div>
+        <a href="https://www.readandspell.com/about#register">Don’t have an account?</a>
+    </div>
+    <div>
+        <a href="/Account/ForgotPassword">Forgot email or password?</a>
+    </div>
+</fieldset>
+</form></div>
+
+<script>
+    $(document).ready(function () {
+        Registration.InitPage();
+    });
+</script>
+
+                </div>
+                <div class="bottom margin-bottom-20 margin-right-20" id="lastTweet" hidden=hidden>
+                    <div class="margin-bottom-15"><i class="ico ico-twitter padding-right-10 padding-left-0 margin-right-10"></i>Status update, <span id="twitterTime"></span>:</div>
+                    <div id="twitterMessage"></div>
+                </div>
+                <div class="twitter hidden-xs hidden-sm"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $.each($('.slim-control'), function () {
+            $(this).removeClass("slim-control");
+        });
+        $(".twitter").html("<a class='twitter-timeline' href='https://twitter.com/TTRSStatus' data-widget-id='666625384029495297' height='410' width='416' data-chrome='nofooter noscroll' data-tweet-limit='5'></a>");
+    </script>
+    <script>
+        !function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + "://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, "script", "twitter-wjs");
+    </script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            var interval = setInterval(function () {
+                var iframe = $("iframe#twitter-widget-0");
+                if (iframe && iframe.contents().find('.timeline-Header').length > 0) {
+                    try {
+                        var lastTweet = iframe.contents().first('.timeline-Viewport li');
+                        var link = $(lastTweet.find('.link')[0]).attr('href');
+                        var lastMessage = lastTweet.find('.timeline-Tweet-text')[0].textContent;
+                        var lastTime = lastTweet.find('.timeline-Tweet-metadata time')[0].getAttribute('datetime');
+
+                        var time = moment(lastTime).format('MMM DD hh:mm');
+
+                        $('#twitterTime').text(time);
+                        $('#twitterMessage').html('<a target="_blank" href="' + link + '">' + lastMessage + '</a>');
+                        $('#lastTweet').prop('hidden', false);
+
+                        clearInterval(interval);
+                    } catch (e) {
+
+                    }
+                }
+            }, 10);
+        });
+    </script>
+    <script>
+        window['_fs_debug'] = false;
+        window['_fs_host'] = 'www.fullstory.com';
+        window['_fs_namespace'] = 'FS';
+        (function (m, n, e, t, l, o, g, y) {
+            if (e in m && m.console && m.console.log) {
+                m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');
+                return;
+            }
+            g = m[e] = function (a, b) { g.q ? g.q.push([a, b]) : g._api(a, b); };
+            g.q = [];
+            o = n.createElement(t);
+            o.async = 1;
+            o.src = 'https://' + window['_fs_host'] + '/s/fs.js';
+            y = n.getElementsByTagName(t)[0];
+            y.parentNode.insertBefore(o, y);
+            g.identify = function (i, v) {
+                g(l, { uid: i });
+                if (v) g(l, v)
+            };
+            g.setUserVars = function (v) { g(l, v) };
+            g.identifyAccount = function (i, v) {
+                o = 'account';
+                v = v || {};
+                v.acctId = i;
+                g(o, v)
+            };
+            g.clearUserCookie = function (c, d, i) {
+                if (!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')) {
+                    d = n.domain;
+                    while (1) {
+                        n.cookie = 'fs_uid=;domain=' + d + ';path=/;expires=' + new Date(0).toUTCString();
+                        i = d.indexOf('.');
+                        if (i < 0) break;
+                        d = d.slice(i + 1)
+                    }
+                }
+            };
+        })(window, document, window['_fs_namespace'], 'script', 'user');
+        FS.clearUserCookie(true);
+    </script>
+
+        <script src="https://tv13x2lcrd4l.statuspage.io/embed/script.js"></script>
+
+    
+
+    <script type="text/javascript">
+        rg4js('apiKey', 'b7SNOOiPrgLqjgiQsA3ETQ');
+        rg4js('enableCrashReporting', true);
+        rg4js('options', { ignore3rdPartyErrors: true });
+
+    </script>
+
+</body>
+</html>
